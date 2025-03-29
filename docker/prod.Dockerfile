@@ -17,7 +17,6 @@ RUN \
 
 RUN npm i sharp
 
-
 # Rebuild the source code only when needed
 FROM base AS builder
 WORKDIR /app
