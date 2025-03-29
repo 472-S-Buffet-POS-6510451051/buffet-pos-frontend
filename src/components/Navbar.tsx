@@ -1,5 +1,6 @@
 // Navbar.js
 'use client';
+
 import React from 'react';
 import { ImSpoonKnife } from "react-icons/im";
 import { MdTableBar } from "react-icons/md";

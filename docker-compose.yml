@@ -2,7 +2,7 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: .docker/Dockerfile
+      dockerfile: ./docker/prod.Dockerfile
     image: frontend-app
     container_name: frontend-container
     ports:
