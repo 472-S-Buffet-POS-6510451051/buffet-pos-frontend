@@ -1,0 +1,20 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/prod.Dockerfile
+    image: frontend-app
+    container_name: frontend-container
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_BASEURL=http://backend:3001  # ใช้ backend URL จากชื่อ service
+      - NEXTAUTH_URL=http://localhost:3000/  # URL สำหรับ NextAuth
+      - NEXTAUTH_SECRET=${NEXTAUTH_SECRET}
+    networks:
+      - buffet-pos-network
+    restart: unless-stopped
+
+networks:
+  buffet-pos-network:
+    external: true
